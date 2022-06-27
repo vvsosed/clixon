@@ -422,6 +422,7 @@ restconf_ssl_context_configure(clixon_handle h,
 {
     int retval = -1;
 
+    /* This macro is deprecated in favor of SSL_CTX_set1_groups(3). */
     SSL_CTX_set_ecdh_auto(ctx, 1);
 
     /* Specifies the locations where CA certificates are located. The certificates available via
@@ -1109,7 +1110,7 @@ openssl_init_socket(clicon_handle h,
  * @retval     0     OK
  * @retval    -1     Error
  */
-int
+static int
 restconf_openssl_init(clicon_handle h,
 		      int           dbg0,
 		      cxobj        *xrestconf)
@@ -1195,7 +1196,7 @@ restconf_openssl_init(clicon_handle h,
 		goto done;
 	}
     }
-    retval = 1;
+    retval = 0;
  done:
     if (vec)
 	free(vec);

@@ -35,6 +35,13 @@
 * [3.3.2](#332) Aug 27 2017
 * [3.3.1](#331) June 7 2017
 
+## Callhome branch
+
+### New features
+
+* RFC 7589 Netconf over TLS (Experimental)
+  * Added configure option: `enable-tls`
+
 ## 5.8.0
 Planned: July 2022
 
